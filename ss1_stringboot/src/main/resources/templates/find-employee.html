@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tìm nhân viên</title>
+</head>
+<body>
+<h2>Tìm nhân viên theo số điện thoại</h2>
+<form th:action="@{/employee/find}" method="post">
+    <label for="phone">Số điện thoại:</label>
+    <input type="text" id="phone" name="phone" required>
+    <button type="submit">Tìm</button>
+</form>
+
+<h2>Tìm nhân viên theo mức lương</h2>
+<form th:action="@{/employee/salary}" method="post">
+    <label for="salary">Lương lớn hơn:</label>
+    <input type="number" id="salary" name="salary" required>
+    <button type="submit">Tìm</button>
+</form>
+
+<hr>
+
+<!-- Kết quả không tìm thấy -->
+<div th:if="${notFound}">
+    <p style="color:red;">Không tìm thấy nhân viên với thông tin đã nhập.</p>
+</div>
+
+<!-- Bảng danh sách kết quả -->
+<div th:if="${list != null}">
+    <h3>Kết quả tìm kiếm:</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>SĐT</th>
+            <th>Lương</th>
+            <th>Ngày tạo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${list}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.phoneNumber}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${#temporals.format(employee.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+| **Tiêu chí**             | **Spring MVC**                                                                | **Spring Boot**                                                                                      |
+| ------------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Khái niệm**            | Là một phần của Spring Framework, giúp xây dựng ứng dụng web theo mô hình MVC | Là một framework độc lập, mở rộng từ Spring, giúp khởi tạo và phát triển ứng dụng Spring dễ dàng hơn |
+| **Cấu hình**             | Cấu hình thủ công, yêu cầu nhiều file XML hoặc Java config                    | Tự động cấu hình (Auto Configuration), giảm thiểu cấu hình thủ công                                  |
+| **Khởi tạo dự án**       | Thủ công: phải tạo file cấu hình, cấu trúc thư mục, cấu hình servlet, v.v.    | Đơn giản: sử dụng Spring Initializr để tạo project trong vài phút                                    |
+| **Quản lý phụ thuộc**    | Cần khai báo rõ ràng tất cả dependencies (Spring Core, MVC, Jackson...)       | Tích hợp sẵn các starter (starter-web, starter-data-jpa, v.v.) để đơn giản hóa                       |
+| **Thời gian phát triển** | Mất thời gian cấu hình và triển khai ban đầu                                  | Phát triển nhanh, giảm thời gian cấu hình nhờ tính năng auto configuration và starter                |
